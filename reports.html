@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRecruit - Reports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-lg">
+            <div class="p-4 border-b">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-xl font-bold">EduRecruit</h1>
+                    <button class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="index.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-th-large w-6"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="applicants.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users w-6"></i>
+                            <span>Applicants</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agents.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-user-tie w-6"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="universities.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-university w-6"></i>
+                            <span>Universities</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="courses.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-book w-6"></i>
+                            <span>Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html" class="flex items-center p-2 text-gray-700 bg-gray-100 rounded-lg">
+                            <i class="fas fa-chart-bar w-6"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <h3 class="px-2 text-xs font-semibold text-gray-600 uppercase">Settings</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li>
+                            <a href="profile.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                                <i class="fas fa-user w-6"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                                <i class="fas fa-sign-out-alt w-6"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-8">
+            <div class="max-w-7xl mx-auto">
+                <!-- Overview Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-blue-100 rounded-full">
+                                <i class="fas fa-users text-blue-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Total Applicants</h3>
+                                <p class="text-2xl font-bold">1,245</p>
+                                <p class="text-sm text-gray-500">All-time applications</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-green-100 rounded-full">
+                                <i class="fas fa-user-tie text-green-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Active Agents</h3>
+                                <p class="text-2xl font-bold">38</p>
+                                <p class="text-sm text-gray-500">Currently recruiting</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-purple-100 rounded-full">
+                                <i class="fas fa-university text-purple-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Universities</h3>
+                                <p class="text-2xl font-bold">22</p>
+                                <p class="text-sm text-gray-500">Partnered institutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-yellow-100 rounded-full">
+                                <i class="fas fa-book text-yellow-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Courses</h3>
+                                <p class="text-2xl font-bold">156</p>
+                                <p class="text-sm text-gray-500">Available programs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Tabs -->
+                <div class="bg-white rounded-lg shadow-sm mb-8">
+                    <div class="border-b">
+                        <nav class="flex">
+                            <button class="px-6 py-4 text-sm font-medium text-gray-900 border-b-2 border-black">
+                                Applicants
+                            </button>
+                            <button class="px-6 py-4 text-sm font-medium text-gray-500 hover:text-gray-700">
+                                Agents
+                            </button>
+                            <button class="px-6 py-4 text-sm font-medium text-gray-500 hover:text-gray-700">
+                                Courses
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Monthly Applications Chart -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                    <h2 class="text-lg font-semibold mb-6">Applicants Report</h2>
+                    <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">
+                        Download Applicants
+                    </button>
+                    
+                    <!-- Chart Area -->
+                    <div class="mt-6 h-80 border-b border-gray-200">
+                        <!-- Monthly Applications Bar Chart -->
+                        <div class="relative h-full">
+                            <div class="absolute bottom-0 left-0 right-0 flex justify-between items-end h-64">
+                                <!-- January -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-32"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Jan</div>
+                                </div>
+                                <!-- February -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-24"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Feb</div>
+                                </div>
+                                <!-- March -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-40"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Mar</div>
+                                </div>
+                                <!-- April -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-28"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Apr</div>
+                                </div>
+                                <!-- May -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-44"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">May</div>
+                                </div>
+                                <!-- June -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-48"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Jun</div>
+                                </div>
+                                <!-- July -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-52"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Jul</div>
+                                </div>
+                                <!-- August -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-40"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Aug</div>
+                                </div>
+                                <!-- September -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-36"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Sep</div>
+                                </div>
+                                <!-- October -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-32"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Oct</div>
+                                </div>
+                                <!-- November -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-28"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Nov</div>
+                                </div>
+                                <!-- December -->
+                                <div class="w-8 mx-1">
+                                    <div class="bg-black h-24"></div>
+                                    <div class="text-xs text-gray-500 text-center mt-2">Dec</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Reports -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Top Universities -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h3 class="text-lg font-semibold mb-4">Top Universities</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <img class="h-8 w-8 rounded-full" src="https://ui-avatars.com/api/?name=Oxford" alt="">
+                                <div class="ml-3 flex-1">
+                                    <div class="text-sm font-medium">Oxford University</div>
+                                    <div class="text-sm text-gray-500">245 applications</div>
+                                </div>
+                                <div class="text-green-600">+12%</div>
+                            </div>
+                            <!-- Add more universities -->
+                        </div>
+                    </div>
+
+                    <!-- Top Courses -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h3 class="text-lg font-semibold mb-4">Top Courses</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <img class="h-8 w-8 rounded-full" src="https://ui-avatars.com/api/?name=CS" alt="">
+                                <div class="ml-3 flex-1">
+                                    <div class="text-sm font-medium">Computer Science</div>
+                                    <div class="text-sm text-gray-500">156 applications</div>
+                                </div>
+                                <div class="text-green-600">+8%</div>
+                            </div>
+                            <!-- Add more courses -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Add interactivity here
+        });
+    </script>
+</body>
+</html>
