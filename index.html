@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRecruit - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-lg">
+            <div class="p-4 border-b">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-xl font-bold">EduRecruit</h1>
+                    <button class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="index.html" class="flex items-center p-2 text-gray-700 bg-gray-100 rounded-lg">
+                            <i class="fas fa-th-large w-6"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="applicants.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users w-6"></i>
+                            <span>Applicants</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agents.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-user-tie w-6"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="universities.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-university w-6"></i>
+                            <span>Universities</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="courses.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-book w-6"></i>
+                            <span>Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-chart-bar w-6"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <h3 class="px-2 text-xs font-semibold text-gray-600 uppercase">Settings</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li>
+                            <a href="profile.html" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                                <i class="fas fa-user w-6"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                                <i class="fas fa-sign-out-alt w-6"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-8">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-2xl font-bold mb-8">Admin Dashboard</h1>
+                
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Total Applicants -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-blue-100 rounded-full">
+                                <i class="fas fa-users text-blue-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Total Applicants</h3>
+                                <p class="text-2xl font-bold">1,245</p>
+                                <p class="text-sm text-gray-500">All student applications</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Agents -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-green-100 rounded-full">
+                                <i class="fas fa-user-tie text-green-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Active Agents</h3>
+                                <p class="text-2xl font-bold">38</p>
+                                <p class="text-sm text-gray-500">Across all regions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Universities -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-purple-100 rounded-full">
+                                <i class="fas fa-university text-purple-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Universities</h3>
+                                <p class="text-2xl font-bold">22</p>
+                                <p class="text-sm text-gray-500">Partnered institutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Courses -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-yellow-100 rounded-full">
+                                <i class="fas fa-book text-yellow-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-sm text-gray-500">Courses</h3>
+                                <p class="text-2xl font-bold">156</p>
+                                <p class="text-sm text-gray-500">Available programs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Applicants -->
+                <div class="bg-white rounded-lg shadow-sm mb-8">
+                    <div class="p-6 border-b">
+                        <h2 class="text-lg font-semibold">Recent Applicants</h2>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Country</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">University</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Course</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 text-sm text-gray-900">1001</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900">Ava Smith</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900">USA</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900">Harvard</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900">BSc Computer Science</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full">
+                                            Applied
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <button class="text-gray-400 hover:text-gray-600">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-4 border-t">
+                        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">
+                            Download Applicants
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Add any JavaScript/jQuery functionality here
+        $(document).ready(function() {
+            // Handle sidebar navigation
+            $('.sidebar-link').click(function(e) {
+                e.preventDefault();
+                $('.sidebar-link').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
