@@ -75,7 +75,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <a href="#" onclick="confirmLogout(event)" class="flex items-center p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+
                                 <i class="fas fa-sign-out-alt w-6"></i>
                                 <span>Logout</span>
                             </a>
@@ -205,9 +206,24 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-            // Add interactivity here
+       // Add any JavaScript/jQuery functionality here
+    $(document).ready(function() {
+        // Handle sidebar navigation
+        $('.sidebar-link').click(function(e) {
+            e.preventDefault();
+            $('.sidebar-link').removeClass('active');
+            $(this).addClass('active');
         });
+    });
+
+    function confirmLogout(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        if (confirm("Are you sure you want to logout?")) {
+            // Assuming login.html is in the same directory or a relative path.
+            // Adjust 'login.html' if it's located elsewhere. For example, '../login.html' if it's one directory up.
+            window.location.href = "Login.html"; 
+        }
+    }
     </script>
 </body>
 </html>
